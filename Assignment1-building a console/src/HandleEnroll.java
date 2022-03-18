@@ -14,7 +14,7 @@ public class HandleEnroll implements StudentEnrollmentManager {
     
     public ArrayList<Student> feithStudentData() throws IOException {
         ArrayList<Student> studentData = new ArrayList<>();
-        String urlData = "src/StudentData/default.csv";
+        String urlData = "FurtherProgramming-Assignment1/Assignment1-building a console/src/StudentData/default.csv";
         String line = null;
         FileReader fileReader = new FileReader(urlData);
         BufferedReader br = new BufferedReader(fileReader);
@@ -32,7 +32,7 @@ public class HandleEnroll implements StudentEnrollmentManager {
     public ArrayList<Course> feithCourseData() throws IOException
     {
         ArrayList<Course> courseData = new ArrayList<>();
-        String urlData = "src/StudentData/default.csv";
+        String urlData = "FurtherProgramming-Assignment1/Assignment1-building a console/src/StudentData/default.csv";
         String line = null;
         FileReader fileReader = new FileReader(urlData);
         BufferedReader br = new BufferedReader(fileReader);
