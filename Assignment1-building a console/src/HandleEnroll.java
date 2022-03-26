@@ -2,66 +2,83 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
+
 import Course.Course;
 import Student.Student;
 
 public class HandleEnroll implements StudentEnrollmentManager {
   
   
-    private ArrayList<Student> studentList;
-    private ArrayList<Course> courseList;
-    private ArrayList<StudentEnrolment> studentEnrollmentList;
+    private ArrayList<Student> studentList = new ArrayList<Student>();
+    private ArrayList<Course> courseList = new ArrayList<Course>();
+    private ArrayList<StudentEnrolment> studentEnrollmentList = new ArrayList<StudentEnrolment>();
+
+    public void addStudent (Student student1){
+        studentList.add(student1);
+    }
+
+    public void addCourse (Course course1){
+        courseList.add(course1);
+    }
+
+    public void addStudentEnrollment (StudentEnrolment enroll1){
+        studentEnrollmentList.add(enroll1);
+    }
+
     
-    public ArrayList<Student> feithStudentData() throws IOException {
-        ArrayList<Student> studentData = new ArrayList<>();
-        String urlData = "FurtherProgramming-Assignment1/Assignment1-building a console/src/StudentData/default.csv";
-        String line = null;
-        FileReader fileReader = new FileReader(urlData);
-        BufferedReader br = new BufferedReader(fileReader);
-
-        while ( (line = br.readLine()) != null){
-            String[] temp = line.split(",");
-            studentData.add(new Student(temp[0], temp[1], temp[2] ));
-            
-            
-        }
-        br.close();
-        return studentData;
-    }
-
-    public ArrayList<Course> feithCourseData() throws IOException
-    {
-        ArrayList<Course> courseData = new ArrayList<>();
-        String urlData = "FurtherProgramming-Assignment1/Assignment1-building a console/src/StudentData/default.csv";
-        String line = null;
-        FileReader fileReader = new FileReader(urlData);
-        BufferedReader br = new BufferedReader(fileReader);
-
-        while ( (line = br.readLine()) != null){
-            String[] temp = line.split(",");
-            courseData.add(new Course(temp[3], temp[4], temp[5]));
-
-
-        }
-        br.close();
-        return courseData;
-    }
-
-
-
-    public void printAll() throws IOException{
-        
-        for(Course course: feithCourseData()){
-            System.out.println(course.toString());
+    
+    public void fetchStudentData(){
+        try{
+            String line= null;
+            String url = "src/StudentData/default.csv";
+            BufferedReader br = new BufferedReader(new FileReader(url));
+            while ((line = br.readLine()) != null){
+                String[] temp = line.split(",");
+                addStudent(new Student(temp[0], temp[1], temp[2]));
+                 
+            }
+        } catch (Exception e) {
+            System.out.println("Some error happened");
+            e.printStackTrace();
         }
     }
+
+    
+
+
+
+    public void printAll(){
+        for (Student s: studentList){
+            System.out.println(s.toString());
+        }
+    }
+
+
+
+
 
 
     @Override
     public void add() {
-        // TODO Auto-generated method stub
+        // The system should ask id of students, semester, and courses that students need to enroll (use Scanner(System.in))
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the StudentID: ");
+        String inputStudentID = sc.nextLine();
+        System.out.println("Enter the Course to enroll: ");
+        String inputCourse = sc.nextLine();
+        System.out.println("Enter the semester to enroll: ");
+        String inputSemester = sc.nextLine();
+
         
+
+
+
+
+
     }
+
 
     @Override
     public void update() {

@@ -1,5 +1,7 @@
+import java.io.IOException;
+
 public interface StudentEnrollmentManager {
-    public void add();
+    public void add() throws IOException;
     public void update();
     public void delete();
     public void getOne();

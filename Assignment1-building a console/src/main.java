@@ -1,8 +1,11 @@
 import java.io.IOException;
 
 public class main {
-    public static void main(String[] args) throws IOException {
-        HandleEnroll h1 = new HandleEnroll();
-        h1.printAll();
+    public static void main(String[] args) {
+        HandleEnroll h = new HandleEnroll();
+        System.out.println("hello");
+        h.fetchStudentData();
+        h.printAll();     
+        
     }
 }

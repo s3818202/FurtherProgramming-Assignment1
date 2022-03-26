@@ -18,6 +18,18 @@ public class StudentEnrolment {
         this.semester = semester;
     }
 
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+    public void setSemester(String semester) {
+        this.semester = semester;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
     public Student getStudent() {
         return student;
     }
