@@ -5,7 +5,8 @@ public class main {
         HandleEnroll h = new HandleEnroll();
         System.out.println("hello");
         h.fetchStudentData();
-        h.printAll();     
+        h.add();
+         
         
     }
 }
