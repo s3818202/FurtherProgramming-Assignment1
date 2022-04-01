@@ -1,10 +1,11 @@
 package Course;
 
 public class Course {
+    //set value
     private String id;
     private String name;
     private String credits;
-
+    //default value
     public Course(){
         id = "0000";
         name = "default";

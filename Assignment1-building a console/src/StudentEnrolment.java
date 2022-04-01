@@ -2,10 +2,11 @@ import Course.Course;
 import Student.Student;
 
 public class StudentEnrolment {
+    //set value
     private Student student;
     private Course course;
     private String semester;
-
+    //default value
     public StudentEnrolment(){
         student = null;
         course = null;

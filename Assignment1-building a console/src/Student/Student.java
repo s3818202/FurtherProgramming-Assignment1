@@ -2,11 +2,12 @@ package Student;
 
 
 public class Student {
+    //set value
     private String id;
     private String name;
     private String birthdate;
 
-    //default
+    //default value
     public Student(){
         id = "s0001";
         name = "default";
