@@ -477,6 +477,6 @@ public class HandleEnroll implements StudentEnrollmentManager {
         @return: 
     */
     public void getAll() {
-          printStudentEnrollmentList();
+          printAll();
     }
 }
